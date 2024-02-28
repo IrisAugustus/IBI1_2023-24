@@ -1,11 +1,6 @@
 Hello. 
-My name is Rob.
-I like drinking tea and eating chocolate biscuits.
-I am enjoying teaching IBI1 in person again 
+My name is Ruiying Jiang.
+I like drinking green tea while reading.
+I am enjoying studying IBI1. 
 I am happy that I can push my repo from Visual Studio Code to GitHub
-I like women
-I like shalom very much
-I like lanley
-I like zoya
-I like girl
-I like max
+I am a undergraduate student at Zhejiang university.
