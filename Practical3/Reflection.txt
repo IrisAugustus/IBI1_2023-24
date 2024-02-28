@@ -1,0 +1,7 @@
+Hi, proffessor! I'm Ruiying Jiang, and I've just finished my IBI1 practical class!
+During this course, I have learnt version control, how to navigate Unix-like systems and how to write simple programs in Python.
+text files in visual studio.
+I have also learnt to write careful instructions when communicating online!
+I've encountered problems when I'm changing the theme of github. I asked my proffesor for help, and the
+problem wa solve.
+I'd like to do more projects in git hub in the future.
