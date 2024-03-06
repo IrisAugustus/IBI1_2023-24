@@ -1,5 +1,6 @@
 #input initial value of culture density as a=5
 #i is the number of days required for a to exceed 90
+#if a is over 90, break the loop, print i
 a=5
 i=0
 while a<=90:
