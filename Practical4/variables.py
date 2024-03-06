@@ -17,13 +17,13 @@ else:
 
 
 #3.2 Booleans exercise
-X=True
-Y=True
+X=input("X=")
+Y=input("Y=")
 if X==Y:
     W=False
 elif X!=Y:
     W=True
-print(W)
+print("W=", W)
 
 #The truth table of W is showed as below:
 #X=True, Y=True, W=False
