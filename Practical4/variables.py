@@ -1,3 +1,4 @@
+#give values to a,b,c,d,e
 a=40
 b=36
 c=30
@@ -5,6 +6,7 @@ d=a-b
 e=b-c
 print('d=',d)
 print('e=',e)
+#make judgements whether d or e is greater
 if d<e:
     print('e is greater.')
 elif d==e:
@@ -17,8 +19,8 @@ else:
 
 
 #3.2 Booleans exercise
-X=input("X=")
-Y=input("Y=")
+X=False
+Y=True
 if X==Y:
     W=False
 elif X!=Y:
