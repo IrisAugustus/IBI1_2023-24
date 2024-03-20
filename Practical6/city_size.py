@@ -15,7 +15,7 @@ print("uk:",uk_pop)
 print("cn:",cn_pop)
 #adding the city names into lists
 name_uk=['Stirling', 'Edinburgh', 'Glasgow', 'London']
-name_cn=['Haining', 'Hangzhou', 'Beijing', 'Beijing']
+name_cn=['Haining', 'Hangzhou', 'Beijing', 'Shanghai']
 #set the basic values for the graphs
 width=0.5
 ind_uk=name_uk
@@ -25,7 +25,7 @@ ind_cn=name_cn
 plt.figure()
 plt.bar(ind_uk, uk_pop, width, color="blue")
 plt.ylabel('population (million)')
-plt.title('uk population')
+plt.title('population of different UK cities')
 plt.xticks(ind_uk)
 plt.show()
 plt.clf()
@@ -33,7 +33,7 @@ plt.clf()
 #draw the bar chart for cn
 plt.bar(ind_cn, cn_pop, width, color="pink")
 plt.ylabel('population (million)')
-plt.title('cn population')
+plt.title('population of different CN cities')
 plt.xticks(ind_cn)
 plt.show()
 plt.clf()
