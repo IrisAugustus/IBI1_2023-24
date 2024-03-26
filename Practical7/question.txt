@@ -1,0 +1,27 @@
+Question:How has the DALYs changed in the UK over time? 
+The answer in dalys.py starts at row 47
+
+Discussion:
+The data shows that the DALYs of UK decreased over time, and this agree with my expectation.
+One DALY represents the loss of the equivalent of one year of full health. 
+DALYs for a disease or health condition are the sum of the years of life lost 
+to due to premature mortality (YLLs) and the years lived with a disability (YLDs) due to 
+prevalent cases of the disease or health condition in a population.
+If the people are healthier, the DALYs of the country will derease.
+UK's economy and technology continued to develop these years.
+The medical technology and medical security also gradually increased.
+People become healthier, so the total number ofrepresents the loss of the 
+equivalent of one year of full health decreased.
+That is, UK's DALYs decreased.
+
+
+
+
+
+
+
+
+
+
+
+

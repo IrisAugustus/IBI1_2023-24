@@ -41,7 +41,26 @@ print('The DALYs in 2019 is below the mean value!')
 plt.figure()
 plt.plot(china_data.Year, china_data.DALYs, 'bo-')
 plt.xticks(china_data.Year,rotation=-90)
+plt.title("China DALYs overtime")
 plt.show()
 plt.clf()
 
+#answer the question in the question.txt
+#select the data corresponding to UK
+m=[]
+for name in rows:
+    if name == 'United Kingdom':
+        m.append(True)
+    else:
+        m.append(False)
+UK_data=dalys_data.iloc[m,:]
+#make seperate dataframes for Year and DALYs
+UK_data.DALYs=UK_data.loc[:,'DALYs']
+UK_data.Year=UK_data.loc[:,'Year']
+#draw plots for UK data, Year as the x axis, and DALYs as the Y axis
+plt.plot(UK_data.Year, UK_data.DALYs, 'bo-')
+plt.xticks(UK_data.Year,rotation=-90)
+plt.title("UK DALYs overtime")
+plt.show()
+plt.clf()
 
