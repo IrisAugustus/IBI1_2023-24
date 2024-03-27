@@ -19,8 +19,10 @@ for name in rows:
         i.append(True)
     else:
         i.append(False)
-print(dalys_data.iloc[i,3])
-
+print(dalys_data.iloc[i,:])
+'''there is a easier way to do this as below
+Afghanistan_rows= dalys_data.loc[dalys_data['Entity']=='China',[True,False,True,True]]
+print(Afghanistan_rows)'''
 #select the data corresponding to China
 s=[]
 for name in rows:
