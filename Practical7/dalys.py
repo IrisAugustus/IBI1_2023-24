@@ -6,6 +6,8 @@ import numpy as np
 #import the data being processed
 os.chdir("E:/IBI1_2023-24/Practical7")
 dalys_data = pd.read_csv("dalys-rate-from-all-causes.csv")
+print(os.getcwd())
+print(os.listdir())
 #showing the fourth column (the DALYs) from every 10th row,
 #starting from the first row, for the first 100 rows (inclusive)
 print(dalys_data.iloc[0:101:10,3])
@@ -53,13 +55,13 @@ for name in rows:
         m.append(True)
     else:
         m.append(False)
-UK_data=dalys_data.iloc[m,:]
+UKdata=dalys_data.iloc[m,:]
 #make seperate dataframes for Year and DALYs
-UK_data.DALYs=UK_data.loc[:,'DALYs']
-UK_data.Year=UK_data.loc[:,'Year']
+UKDALYs=UKdata.loc[:,'DALYs']
+UKYear=UKdata.loc[:,'Year']
 #draw plots for UK data, Year as the x axis, and DALYs as the Y axis
-plt.plot(UK_data.Year, UK_data.DALYs, 'bo-')
-plt.xticks(UK_data.Year,rotation=-90)
+plt.plot(UKYear, UKDALYs, 'bo-')
+plt.xticks(UKYear,rotation=-90)
 plt.title("UK DALYs overtime")
 plt.show()
 plt.clf()
