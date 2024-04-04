@@ -1,6 +1,9 @@
 import re
-seq = 'ATGCAATCGGTGTGTCTGTTCTGAGAGGGCCTAAGTGTGTGT'
+#input the sequence
+seq = 'ATGCAATCGGTGTGTCTGTTCTGAGAGGGCCTAA'
+#input the repetitive pattern
 repeat_patterns = ['GTGTGT', 'GTCTGT']
+#create a function for counting repetitive numbers
 def count_repeats(sequence, patterns):
     total_count = 0
     for pattern in patterns:
