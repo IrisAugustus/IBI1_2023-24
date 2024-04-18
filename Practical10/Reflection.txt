@@ -1,0 +1,5 @@
+In this practical, I use python to create SIR models, gradually considering the vaccination population rate and spatial condition, from easy to hard.
+Plainly creating a SIR model and plot it was simple, I just record the new values for SIR in every loop. However you need to pay attention to all the parameters you use in case you mistake them.
+For SIR model with vaccination rate, you just need to add a kind of new population to consider, and create a new loop for percentage of vaccination.
+For a SIR model considering spatial, there is many manipulations in numpy to create the 2D image. You can google the functions to use them.
+The thing I enjoy most was to create loops in the code and then plotted them on the image. And I found it difficult to learn how to use new functions in python.
