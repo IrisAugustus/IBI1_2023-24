@@ -1,3 +1,4 @@
+#import the modules to be used, and use blosum to read the BLOSUM62 matrix
 import re
 import blosum as bl
 matrix = bl.BLOSUM(62)
@@ -5,39 +6,23 @@ matrix = bl.BLOSUM(62)
 human = 'METTPLNSQKQLSACEDGEDCQENGVLQKVVPTPGDKVESGQISNGYSAVPSPGAGDDTRHSIPATTTTLVAELHQGERETWGKKVDFLLSVIGYAVDLGNVWRFPYICYQNGGGAFLLPYTIMAIFGGIPLFYMELALGQYHRNGCISIWRKICPIFKGIGYAICIIAFYIASYYNTIMAWALYYLISSFTDQLPWTSCKNSWNTGNCTNYFSEDNITWTLHSTSPAEEFYTRHVLQIHRSKGLQDLGGISWQLALCIMLIFTVIYFSIWKGVKTSGKVVWVTATFPYIILSVLLVRGATLPGAWRGVLFYLKPNWQKLLETGVWIDAAAQIFFSLGPGFGVLLAFASYNKFNNNCYQDALVTSVVNCMTSFVSGFVIFTVLGYMAEMRNEDVSEVAKDAGPSLLFITYAEAIANMPASTFFAIIFFLMLITLGLDSTFAGLEGVITAVLDEFPHVWAKRRERFVLAVVITCFFGSLVTLTFGGAYVVKLLEEYATGPAVLTVALIEAVAVSWFYGITQFCRDVKEMLGFSPGWFWRICWVAISPLFLLFIICSFLMSPPQLRLFQYNYPYWSIILGYCIGTSSFICIPTYIAYRLIITPGTFKERIIKSITPETPTEIPCGDIRLNAV'
 mouse = 'METTPLNSQKVLSECKDKEDCQENGVLQKGVPTPADKAGPGQISNGYSAVPSTSAGDEAPHSTPAATTTLVAEIHQGERETWGKKMDFLLSVIGYAVDLGNIWRFPYICYQNGGGAFLLPYTIMAIFGGIPLFYMELALGQYHRNGCISIWKKICPIFKGIGYAICIIAFYIASYYNTIIAWALYYLISSFTDQLPWTSCKNSWNTGNCTNYFAQDNITWTLHSTSPAEEFYLRHVLQIHQSKGLQDLGTISWQLALCIMLIFTIIYFSIWKGVKTSGKVVWVTATFPYIVLSVLLVRGATLPGAWRGVVFYLKPNWQKLLETGVWVDAAAQIFFSLGPGFGVLLAFASYNKFNNNCYQDALVTSVVNCMTSFVSGFVIFTVLGYMAEMRNEDVSEVAKDAGPSLLFITYAEAIANMPASTFFAIIFFLMLITLGLDSTFAGLEGVITAVLDEFPHIWAKRREWFVLIVVITCILGSLLTLTSGGAYVVTLLEEYATGPAVLTVALIEAVVVSWFYGITQFCSDVKEMLGFSPGWFWRICWVAISPLFLLFIICSFLMSPPQLRLFQYNYPHWSIILGYCIGTSSVICIPIYIIYRLISTPGTLKERIIKSITPETPTEIPCGDIRMNAV'
 rat = 'METTPLNSQKVLSECKDREDCQENGVLQKGVPTTADRAEPSQISNGYSAVPSTSAGDEASHSIPAATTTLVAEIRQGERETWGKKMDFLLSVIGYAVDLGNIWRFPYICYQNGGGAFLLPYTIMAIFGGIPLFYMELALGQYHRNGCISIWRKICPIFKGIGYAICIIAFYIASYYNTIIAWALYYLISSLTDRLPWTSCTNSWNTGNCTNYFAQDNITWTLHSTSPAEEFYLRHVLQIHQSKGLQDLGTISWQLTLCIVLIFTVIYFSIWKGVKTSGKVVWVTATFPYIVLSVLLVRGATLPGAWRGVVFYLKPNWQKLLETGVWVDAAAQIFFSLGPGFGVLLAFASYNKFNNNCYQDALVTSVVNCMTSFVSGFVIFTVLGYMAEMRNEDVSEVAKDAGPSLLFITYAEAIANMPASTFFAIIFFLMLITLGLDSTFAGLEGVITAVLDEFPHIWAKRREWFVLIVVITCVLGSLLTLTSGGAYVVTLLEEYATGPAVLTVALIEAVAVSWFYGITQFCSDVKEMLGFSPGWFWRICWVAISPLFLLFIICSFLMSPPQLRLFQYNYPHWSIVLGYCIGMSSVICIPTYIIYRLISTPGTLKERIIKSITPETPTEIPCGDIRMNAV'
-#initialize the count
-alignment_score = 0
-identical_count = 0
 
-for i in range(len(human)):
-    if human[i] == mouse[i]:
-        identical_count += 1
-    else:
-        alignment_score += matrix[human[i]][mouse[i]]
-percentage_identity = (identical_count / len(human)) * 100
-print('the identity percentage is',percentage_identity,'%','between human and mouse ')
-print('the alignment_score is',alignment_score,'between human and mouse')
-alignment_score = 0
-identical_count = 0
+#create a functioon for alignment_score and identical_count for the two sequences
+def test_similarity(seq1_name,seq1,seq2_name,seq2):
+    #initialize the values
+    alignment_score = 0
+    identical_count = 0
+    #create loops for each amino acid in the seq1
+    for i in range(len(seq1)):
+        #if the amino acid is the same, +1 to identical_count
+        if seq1[i] == seq2[i]:
+            identical_count += 1
+        #for each pair of amino acid, add the corresponding alignment_score
+        alignment_score += matrix[seq1[i]][seq2[i]]
+    percentage_identity = (identical_count / len(human)) * 100
+    #return the result of the test
+    return f' the identity percentage is {percentage_identity}% between {seq1_name} and {seq2_name} \n the alignment_score is {alignment_score} between {seq1_name} and {seq2_name}'
 
-for i in range(len(human)):
-    if human[i] == rat[i]:
-        identical_count += 1
-    else:
-        alignment_score += matrix[human[i]][rat[i]]
-percentage_identity = (identical_count / len(human)) * 100
-print('the identity percentage is',percentage_identity,'%','between human and rat ')
-print('the alignment_score is',alignment_score,'between human and rat')
-alignment_score = 0
-identical_count = 0
-
-for i in range(len(mouse)):
-    if mouse[i] == rat[i]:
-        identical_count += 1
-    else:
-        alignment_score += matrix[mouse[i]][rat[i]]
-percentage_identity = (identical_count / len(mouse)) * 100
-print('the identity percentage is',percentage_identity,'%','between mouse and rat ')
-print('the alignment_score is',alignment_score,'between mouse and rat')
-alignment_score = 0
-identical_count = 0
+print(test_similarity('Human',human,'Mouse',mouse))
+print(test_similarity('Human',human,'Rat',rat))
+print(test_similarity('Rat',rat,'Mouse',mouse))
