@@ -12,8 +12,8 @@ def count_repeats(sequence, patterns):
     return total_count
 
 #import the file path of the file to be used
-input_file_path = r'E:\IBI1_2023-24\Practical8\duplicate genes.fa'
-output_file_path = f'{repeat_patterns}_duplicate_genes.fa'
+input_file_path = r'E:\IBI1_2023-24\Practical8\duplicate_genes.fa'
+output_file_path = f'E:\IBI1_2023-24\Practical8\{repeat_patterns}_duplicate_genes.fa'
 
 #Open the files
 with open(input_file_path, 'r') as input_file, open(output_file_path, 'w') as output_file:

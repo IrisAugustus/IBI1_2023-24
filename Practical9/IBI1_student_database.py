@@ -19,7 +19,7 @@ class students:
 #Examples for the class
 student1 = students("Alice", "BMI", 90, 85, 95)
 student2 = students("Bob", "BMS", 85, 90, 88)
-student3 = students('Cindy', 'BMS', 100, 105, 90)
+student3 = students('Cindy', 'BMS', 100, 98, 90)
 print(student1)
 print(student2)
 print(student3)

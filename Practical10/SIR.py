@@ -27,7 +27,6 @@ for i in range(1,1000):
     S.append(S[i-1]-StoI)
 
 #draw graph for the SIR model
-plt.figure()
 plt.figure(figsize =(6,4),dpi=150)
 plt.title('SIR model')
 plt.plot(Time,S,label='Susceptible')

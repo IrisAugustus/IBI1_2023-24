@@ -44,6 +44,8 @@ print('The DALYs in 2019 is below the mean value!')
 #draw plots for china data, Year as the x axis, and DALYs as the Y axis
 plt.figure()
 plt.plot(china_data.Year, china_data.DALYs, 'bo-')
+plt.xlabel('Year')
+plt.ylabel('DALYs')
 plt.xticks(china_data.Year,rotation=-90)
 plt.title("China DALYs overtime")
 plt.show()
@@ -63,6 +65,8 @@ UKDALYs=UKdata.loc[:,'DALYs']
 UKYear=UKdata.loc[:,'Year']
 #draw plots for UK data, Year as the x axis, and DALYs as the Y axis
 plt.plot(UKYear, UKDALYs, 'bo-')
+plt.xlabel('Year')
+plt.ylabel('DALYs')
 plt.xticks(UKYear,rotation=-90)
 plt.title("UK DALYs overtime")
 plt.show()

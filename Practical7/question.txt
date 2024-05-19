@@ -1,5 +1,5 @@
 Question:How has the DALYs changed in the UK over time? 
-The answer in dalys.py starts at row 47
+The answer in dalys.py starts at row 52
 
 Discussion:
 The data shows that the DALYs of UK decreased over time, and this agree with my expectation.
