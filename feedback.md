@@ -6,4 +6,6 @@ E:\IBI1_2023-24\Practical7\dalys.py, I change the rotation angle of the x ticks 
 
 E:\IBI1_2023-24\Practical8\count_repeat_duplicate_genes.py, I change the pattern to make the results accurate.
 
+E:\IBI1_2023-24\Practical8\repetitive_counter.py, use lookahead assertions to count overlapping occurrences of specified patterns in a sequence, ways learnt from the Internet.s
+
 E:\IBI1_2023-24\Practical9, I make the output text line more accurate and grammarly correct, and I've added pseudocode.
