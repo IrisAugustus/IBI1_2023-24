@@ -11,7 +11,11 @@ print(os.listdir())
 #showing the fourth column (the DALYs) from every 10th row,
 #starting from the first row, for the first 100 rows (inclusive)
 print(dalys_data.iloc[0:101:10,3])
+
 #used a list of Booleans to show DALYs for all rows corresponding to Afghanistan.
+Afghanistan_DALYs= dalys_data.loc[dalys_data['Entity']=="Afghanistan",[False,False,False,True]]
+print(Afghanistan_DALYs)
+#there is another way to do this as below
 rows=dalys_data.iloc[:,0]
 i=[]
 for name in rows:
@@ -20,9 +24,7 @@ for name in rows:
     else:
         i.append(False)
 print(dalys_data.iloc[i,:])
-'''there is a easier way to do this as below
-Afghanistan_rows= dalys_data.loc[dalys_data['Entity']=='China',[True,False,True,True]]
-print(Afghanistan_rows)'''
+
 #select the data corresponding to China
 s=[]
 for name in rows:
@@ -39,14 +41,16 @@ mean=np.mean(china_data.DALYs)
 print('The mean value of China DALYs overtime is', mean)
 #Check the DALYs data for China in 2019
 print('The value of DALYs is ', china_data.DALYs.iloc[29],' in 2019.')
-print('The DALYs in 2019 is below the mean value!')
+#compare the two values
+if china_data.DALYs.iloc[29] < mean:
+    print('The DALYs in 2019 is below the mean value!')
 
 #draw plots for china data, Year as the x axis, and DALYs as the Y axis
 plt.figure()
 plt.plot(china_data.Year, china_data.DALYs, 'bo-')
 plt.xlabel('Year')
 plt.ylabel('DALYs')
-plt.xticks(china_data.Year,rotation=-90)
+plt.xticks(china_data.Year, rotation=-45)
 plt.title("China DALYs overtime")
 plt.show()
 plt.clf()
@@ -67,7 +71,7 @@ UKYear=UKdata.loc[:,'Year']
 plt.plot(UKYear, UKDALYs, 'bo-')
 plt.xlabel('Year')
 plt.ylabel('DALYs')
-plt.xticks(UKYear,rotation=-90)
+plt.xticks(UKYear,rotation=-45)
 plt.title("UK DALYs overtime")
 plt.show()
 plt.clf()

@@ -1,5 +1,7 @@
 def find_actor(birth_year):
+    #set the watch year of the user
     watch_year=int(birth_year) + 18
+    #input the actors as a dictionary
     actors={1973:'Roger Moore',1987:'Timothy Dalton',1995:'Pierce Brosnan',2006:'Daniel Craig'}
     for year in sorted(actors.keys(),reverse=True):
         if watch_year >= year:

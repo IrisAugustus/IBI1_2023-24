@@ -1,39 +1,43 @@
 import re
-#imput the repetitive sequences to be counted
-tips='Please input one of the two repetitive sequences GTGTGT or GTCTGT: '
-repeat_patterns = str(input(tips))
-#creat a function to count the repetitive sequence, and return the duplicated number
-def count_repeats(sequence, patterns):
-    total_count = 0
-    for pattern in patterns:
-        matches = re.finditer(pattern, sequence)
-        for match in matches:
-            total_count += 1
-    return total_count
 
-#import the file path of the file to be used
-input_file_path = r'E:\IBI1_2023-24\Practical8\duplicate_genes.fa'
-output_file_path = f'E:\IBI1_2023-24\Practical8\{repeat_patterns}_duplicate_genes.fa'
+# Input the repetitive sequence
+tips = 'Please input one of the two repetitive sequences GTGTGT or GTCTGT: '
+repeat_pattern = input(tips)
 
-#Open the files
+# Validate the input pattern
+if repeat_pattern not in ['GTGTGT', 'GTCTGT']:
+    print("Invalid input. Please run the script again and input a valid sequence.")
+    exit(1)
+
+# Define a function to count the repetitive sequences
+def count_repeats(sequence, pattern):
+    return len(re.findall(f'(?={pattern})', sequence))
+
+# Set the pathways of the input and output files
+input_file_path = r'E:/IBI1_2023-24/Practical8/duplicate_genes.fa'
+output_file_path = f'E:/IBI1_2023-24/Practical8/{repeat_pattern}_duplicate_genes.fa'
+
+# Open the files
 with open(input_file_path, 'r') as input_file, open(output_file_path, 'w') as output_file:
     gene_name = ''
     sequence = ''
     for line in input_file:
         if line.startswith('>'):
-            # get information for the former gene
-            if gene_name != '':
-                output_file.write(gene_name + ' ' + str(count_repeats(sequence,repeat_patterns)) + '\n' + sequence + '\n\n')
-            # get the information of the new gene
+            if gene_name:
+                # Count repeats and write the previous gene sequence to the output file
+                count = count_repeats(sequence, repeat_pattern)
+                if count!=0:
+                    output_file.write(f"{gene_name} {count}\n{sequence}\n\n")
             gene_name = line.strip()
-            # reset the sequence
             sequence = ''
         else:
-            # remove the \n at the end of a line of sequence
             sequence += line.strip()
-    # processing the information for the last gene
-    if gene_name != '':
-        output_file.write(gene_name + ' ' + str(count_repeats(sequence, repeat_patterns)) + '\n' + sequence + '\n')
-            
     
+    # Handle the last gene sequence in the file
+    if gene_name:
+        count = count_repeats(sequence, repeat_pattern)
+        if count!=0:
+            output_file.write(f"{gene_name} {count}\n{sequence}\n\n")
+
+print("Task completed")
 

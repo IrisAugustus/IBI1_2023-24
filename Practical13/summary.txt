@@ -1,9 +1,13 @@
 the identity percentage is 92.53968253968254% between Human and Mouse 
-the alignment_score is 3137.0 between Human and Mouse
 the identity percentage is 91.74603174603175% between Human and Rat 
-the alignment_score is 3107.0 between Human and Rat
 the identity percentage is 96.82539682539682% between Rat and Mouse 
+interpretation: the identity percentage is the highest between the mouse and rat, and the lowest between human and rat.
+
+the alignment_score is 3137.0 between Human and Mouse
+the alignment_score is 3107.0 between Human and Rat
 the alignment_score is 3261.0 between Rat and Mouse
+interpretation: the alignment_score is the highest between the rat and mouse, and the lowest between human and rat.
+
 
 The sequences of rat and mouse are most closely related.
 Mouse is a better model organism for human based on the	data analysed here, because their sequences are more similar.
