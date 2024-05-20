@@ -7,7 +7,8 @@ repeat_patterns = ['GTGTGT', 'GTCTGT']
 def count_repeats(sequence, patterns):
     total_count = 0
     for pattern in patterns:
-        matches = re.finditer(pattern, sequence)
+        # use lookahead assertions to count overlapping occurrences of specified patterns in a sequence, ways learnt from the Internet
+        matches = re.finditer(f'(?={pattern})', sequence)
         for match in matches:
             total_count += 1
     return total_count

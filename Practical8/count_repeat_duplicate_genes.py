@@ -11,6 +11,7 @@ if repeat_pattern not in ['GTGTGT', 'GTCTGT']:
 
 # Define a function to count the repetitive sequences
 def count_repeats(sequence, pattern):
+    # use lookahead assertions to count overlapping occurrences of specified patterns in a sequence, ways learnt from the Internet
     return len(re.findall(f'(?={pattern})', sequence))
 
 # Set the pathways of the input and output files
